@@ -1,0 +1,56 @@
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+
+<div  *ngIf="physiotherapist$ | async as physiotherapist">
+  <div class="header">
+    <div class="header_left">
+      <mat-icon [routerLink]="['/reviews', physiotherapist.id]">keyboard_arrow_left</mat-icon>
+      <h1>New Review</h1>
+    </div>
+  </div>
+
+  <div class="review-form">
+    <h1>Physiotherapist</h1>
+    <mat-divider></mat-divider>
+    <h2>{{'Dr. '+physiotherapist.firstName+' '+physiotherapist.paternalSurname+' '+physiotherapist.maternalSurname}}</h2>
+
+    <h1>Stars</h1>
+    <mat-divider></mat-divider>
+    <div class="review-stars">
+    <div *ngFor="let star of stars" [ngClass]="[star.class]" (click)="selectStar(star.id)">
+      <mat-icon>{{star.icon}}</mat-icon>
+    </div>
+      <h2>{{selectedRating}}/</h2>
+      <h3>5</h3>
+    </div>
+
+    <h1>Description</h1>
+    <mat-divider></mat-divider>
+    <form class="review-description">
+      <mat-form-field class="description-full-width" appearance="fill" >
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput="text" placeholder="Ex. It makes me feel..." name="review_description" required [(ngModel)]="newReview.description"></textarea>
+      </mat-form-field>
+    </form>
+
+  </div>
+
+  <div class="btn">
+    <button mat-raised-button class="div-button-reviews" color="primary" (click)="addReview()" >Reviews</button>
+  </div>
+
+
+
+
+</div>
+
+  </div>
+</div>
+
+
+
+

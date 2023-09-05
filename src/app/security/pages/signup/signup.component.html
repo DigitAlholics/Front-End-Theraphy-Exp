@@ -1,0 +1,71 @@
+<main id="signupContainer" class="signup-container">
+  <div class="signup-section mat-elevation-z10" id="signupForm">
+    <div class="signup-form-container" >
+
+      <div class="signup-logo">
+        <img src="https://raw.githubusercontent.com/DigitAlholics-3-0/Front-End-Theraphy/master/src/assets/logo-image.png" alt="Theraphy logo" class="logo-image">
+        <span class="logo-text">Theraphy</span>
+      </div>
+
+      <span class="signup-form-title">Sign Up</span>
+      <p>Sign up with your data information</p>
+
+      <form [formGroup]="registerForm" (submit)="addUser()" class="signup-form">
+
+        <div class="signup-form-general-data">
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Name</mat-label>
+            <input type="text" matInput formControlName="firstName" required [(ngModel)]="userData.firstName">
+            <mat-error *ngIf="first_name?.errors?.['required']">Name is <strong>required</strong></mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Paternal Surname</mat-label>
+            <input type="text" matInput formControlName="paternalSurname" required [(ngModel)]="userData.paternalSurname">
+            <mat-error *ngIf="paternal_surname?.errors?.['required']">Paternal surname is <strong>required</strong></mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Maternal Surname</mat-label>
+            <input type="text" matInput formControlName="maternalSurname" required [(ngModel)]="userData.maternalSurname">
+            <mat-error *ngIf="maternal_surname?.errors?.['required']">Maternal surname is <strong>required</strong></mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Birthday</mat-label>
+            <input type="text" matInput formControlName="birthdayDate" required [(ngModel)]="userData.birthdayDate">
+            <mat-error *ngIf="birthday?.errors?.['required']">Birthday is <strong>required</strong></mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width" >
+            <mat-label>Rol</mat-label>
+            <mat-select type="text" formControlName="type" required [(ngModel)]="userData.type">
+              <mat-option *ngFor="let type of types" [value]="type">
+                {{type}}
+              </mat-option>
+              <mat-error *ngIf="type?.errors?.['required']">Rol is <strong>required</strong></mat-error>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="signup-form-user-data">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>E-mail</mat-label>
+            <input type="text" matInput formControlName="email" required [(ngModel)]="userData.email">
+            <mat-error *ngIf="email?.errors?.['required']">Email is <strong>required</strong></mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="password" required [(ngModel)]="userData.password">
+            <mat-error *ngIf="password?.errors?.['required']">Password is <strong>required</strong></mat-error>
+          </mat-form-field>
+
+          <button [disabled]="!registerForm.valid" mat-raised-button color="primary" type="submit" class="signup-button">Create Account</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>

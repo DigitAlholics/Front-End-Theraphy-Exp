@@ -1,0 +1,52 @@
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+    <div><div  *ngIf="physiotherapist$ | async as physiotherapist">
+      <div class="header">
+        <div class="header_left">
+          <mat-icon [routerLink]="['/professional-profile-patient',physiotherapist.id]">keyboard_arrow_left</mat-icon>
+          <h1>Professional's reviews</h1>
+        </div>
+        <div class="header_right">
+          <button mat-raised-button class="div-button" [routerLink]="['/new-review',physiotherapist.id]" color="primary">New Review</button>
+        </div>
+      </div>
+
+      <div class="professional-profile-card" >
+        <mat-card >
+          <mat-card-title-group>
+            <img mat-card-md-image src="{{ physiotherapist.photoUrl}}" alt="{{ physiotherapist.firstName + ' ' + physiotherapist.paternalSurname }}">
+            <mat-card-title><span>{{ physiotherapist.firstName + ' ' + physiotherapist.paternalSurname }}</span></mat-card-title>
+            <mat-card-subtitle><span>{{'Medical Consultancies: '+ physiotherapist.consultationsQuantity}}</span></mat-card-subtitle>
+            <mat-card-subtitle ><mat-icon class="icon" >star</mat-icon> <span>{{physiotherapist.rating}}</span></mat-card-subtitle>
+
+          </mat-card-title-group>
+        </mat-card>
+      </div>
+    </div>
+
+      <div class="reviews-title">
+        <h1>Reviews</h1>
+        <mat-divider></mat-divider>
+      </div>
+
+      <div *ngFor="let review of reviews$">
+        <mat-card class="example-card">
+          <div class="review-info">
+            <mat-card-title><span>{{ review.patient.firstName + " " + review.patient.lastName }}</span></mat-card-title>
+            <mat-card-subtitle ><span class="review-description">{{ review.description}}</span></mat-card-subtitle>
+          </div>
+          <div class="review-stars">
+            <mat-card-subtitle ><mat-icon class="icon" >star</mat-icon> <span>{{review.stars}}</span></mat-card-subtitle>
+          </div>
+
+        </mat-card>
+      </div></div>
+  </div>
+</div>
+
+
+

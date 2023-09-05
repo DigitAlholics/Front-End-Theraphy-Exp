@@ -1,0 +1,39 @@
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+    <div><h1>Physiotherapists</h1>
+      <p>Find your ideal physiotherapist</p>
+
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Physiotherapist</mat-label>
+          <input type="search" #inputSearch matInput placeholder="Jhon Doe" (keyup.enter)="getPhysiotherapistByQuery(inputSearch.value)">
+          <mat-icon color="primary" matSuffix>search</mat-icon>
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="search-btn" (click)="getPhysiotherapistByQuery(inputSearch.value)"><span>Search</span></button>
+      </form>
+      <mat-divider></mat-divider>
+
+      <div class="cards" *ngFor="let physiotherapist of physiotherapists">
+        <mat-card class="example-card">
+          <mat-card-title-group>
+            <mat-card-title><span>{{ physiotherapist.firstName + ' ' + physiotherapist.paternalSurname }}</span></mat-card-title>
+            <mat-card-subtitle><span>{{'Medical Consultancies: '+ physiotherapist.consultationsQuantity}}</span></mat-card-subtitle>
+            <mat-card-subtitle><mat-icon>star</mat-icon> <span>{{physiotherapist.rating}}</span></mat-card-subtitle>
+            <img mat-card-md-image src="{{ physiotherapist.photoUrl}}" alt="{{ physiotherapist.firstName + ' ' + physiotherapist.paternalSurname }}">
+          </mat-card-title-group>
+          <mat-card-content>
+            <button mat-raised-button color="primary" class="viewProfile-btn" [routerLink]="['/professional-profile-patient',physiotherapist.id]"><span>View Profile</span></button>
+          </mat-card-content>
+        </mat-card>
+      </div></div>
+  </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,94 @@
+<div class="page">
+  <div class="sidenav">
+    <div *ngIf="userType===types[0]; else elseTemplate">
+      <app-sidenav></app-sidenav>
+    </div>
+    <ng-template #elseTemplate>
+      <app-physiotherapist-sidenav></app-physiotherapist-sidenav>
+    </ng-template>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+
+    <div><form class="form" (submit)="onSubmit()" #appointmentForm='ngForm' >
+      <div class="form-top">
+        <div class="back-button">
+          <mat-icon [routerLink]="'/medical-appointments'">keyboard_arrow_left</mat-icon>
+        </div>
+        <div class="text" >
+          <h1>Diagnosis</h1>
+          <h2 >Add a diagnosis for your patient</h2>
+        </div>
+      </div>
+
+      <div class="form-body" *ngIf="appointmentData.done===false.toString(); else diagnosticSent">
+        <div class="profile-footer">
+          <div class="patient-information" >
+            <div class="university">
+              <li>
+              <h3 >{{appointmentData.patient.firstName}}</h3>
+              </li>
+            </div>
+            <div class="university">
+              <li>
+                <h3>{{appointmentData.scheduledDate}} </h3>
+              </li>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="personal-information">
+          <div class="personal-information_data">
+            <mat-label>Diagnosis</mat-label>
+            <mat-form-field appearance="outline" >
+              <input matInput name = "topic" required [(ngModel)]="appointmentData.diagnosis">
+              <mat-hint align="start">Ej. Obesity</mat-hint>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="btn">
+          <button mat-button class="div-button"  [disabled]="appointmentForm.invalid" >Save</button>
+        </div>
+
+      </div>
+
+      <ng-template class="form-body" #diagnosticSent>
+        <div class="profile-footer">
+          <div class="patient-information" >
+            <div class="university">
+              <li>
+                <h3 >{{appointmentData.patient.firstName}}</h3>
+              </li>
+            </div>
+            <div class="university">
+              <li>
+                <h3>{{appointmentData.scheduledDate}} </h3>
+              </li>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="personal-information">
+          <div class="personal-information_data">
+            <div class="diagnostic-text" >
+              <h2>Diagnosis</h2>
+              <h3 >{{appointmentData.diagnosis}}</h3>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+
+
+    </form>
+
+    </div>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,136 @@
+.page {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.contents {
+  width: 100%;
+  height: 100%;
+  margin-left: 48px;
+  margin-right: 48px;
+}
+.sidenav {
+  height: 100%;
+}
+
+
+
+
+li{
+  list-style: none;
+}
+h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+h1,h3 {
+
+  font-family: 'IBM Plex Sans', "Helvetica Neue", sans-serif;
+}
+mat-icon {
+  cursor: pointer;
+  font-size: 36px;
+  width: 36px;
+  height: 36px;
+}
+
+/* Header */
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.header_left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+
+/* Review Title*/
+
+.review-form{
+  margin-top:20px;
+  margin-left:40px;
+}
+
+.review-form h2{
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+mat-divider{
+  width: 40%;
+  margin-top:5px;
+  height: 1px;
+  background-color: black;
+
+}
+
+/* Star Rating */
+.review-stars{
+  display: flex;
+  align-items: center;
+  font-weight:2000;
+  margin-top: 20px;
+}
+
+.review-stars h2{
+  margin-left:20px;
+}
+
+.review-stars h3{
+  margin-top:25px;
+}
+.star{
+  margin: 0 0;
+  color: #a9a5a5;
+  display: inline-block;
+  cursor: pointer;
+  transition: all .3s;
+  transform: scale(1);
+}
+
+.star mat-icon{
+  width: 40px;
+  height: 40px;
+}
+
+.star-gold{
+  color: orange
+}
+
+
+
+.star-rating-animation:hover .star-hover{
+  color: orange
+}
+
+.star-rating-animation .star-hover:hover ~ .star-hover{
+  color: #ddd
+}
+
+.star-rating-animation .star-hover:hover{
+  transform: scale(1.3)
+}
+
+/* Review Description */
+.review-description {
+  margin-top: 20px;
+}
+
+.description-full-width {
+  width:530px;
+}
+
+.btn{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+

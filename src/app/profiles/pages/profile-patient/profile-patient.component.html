@@ -1,0 +1,94 @@
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+    <div><div class="professional-profile" *ngFor="let patient of patients">
+
+      <div class="profile-header">
+        <div class="profile-header_left">
+          <h1>My Profile</h1>
+        </div>
+      </div>
+
+      <div class="profile-info">
+        <div>
+          <img mat-card-md-image src="{{patient.photoUrl}}" alt="{{ patient.firstName }}">
+        </div>
+        <div class="profile-data">
+          <h1> {{patient.firstName}} {{patient.lastName}} </h1>
+          <div class="profile-data-list">
+            <li>
+              <mat-icon class="icon" >accessibility</mat-icon>
+              <h2>{{patient.appointmentQuantity}} appointments</h2>
+            </li>
+
+            <li>
+              <mat-icon class="icon" >calendar_today</mat-icon>
+              <h2>{{patient.birthdayDate}}</h2>
+            </li>
+
+            <li>
+              <mat-icon class="icon" >email</mat-icon>
+              <h2>{{patient.email}}</h2>
+            </li>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div>
+        <mat-card class="example-card" [routerLink]="['/my-treatments']">
+          <div class="option-info">
+            <mat-card-subtitle ><img mat-card-md-image src="https://raw.githubusercontent.com/DigitAlholics-3-0/Front-End-Theraphy/master/src/assets/treatment-sessions.png" alt="Treatments Sessions icon">
+            </mat-card-subtitle>
+            <div class="option-text">
+              <mat-card-title><span>Treatments Sessions</span></mat-card-title>
+              <mat-card-subtitle ><span class="review-description">Check all the physiotherapists to which you have signed up</span></mat-card-subtitle>
+            </div>
+          </div>
+          <div >
+            <mat-card-subtitle ><mat-icon class="icon" >trending_flat</mat-icon> </mat-card-subtitle>
+          </div>
+        </mat-card>
+
+        <mat-card class="example-card" [routerLink]="['/medical-appointments']">
+          <div class="option-info">
+            <mat-card-subtitle ><img mat-card-md-image src="https://raw.githubusercontent.com/DigitAlholics-3-0/Front-End-Theraphy/master/src/assets/medical-appointments.png" alt="Medical Appointments icon">
+            </mat-card-subtitle>
+            <div class="option-text">
+              <mat-card-title><span>Medical Appointments</span></mat-card-title>
+              <mat-card-subtitle ><span class="review-description">Check all your medical appointments</span></mat-card-subtitle>
+            </div>
+          </div>
+          <div >
+            <mat-card-subtitle ><mat-icon class="icon" >trending_flat</mat-icon> </mat-card-subtitle>
+          </div>
+        </mat-card>
+
+        <mat-card class="example-card" [routerLink]="['/medical-history']">
+
+          <div class="option-info">
+            <mat-card-subtitle ><img mat-card-md-image src="https://raw.githubusercontent.com/DigitAlholics-3-0/Front-End-Theraphy/master/src/assets/medical-history.png" alt="Medical History icon">
+            </mat-card-subtitle>
+            <div class="option-text">
+              <mat-card-title><span>Medical History</span></mat-card-title>
+              <mat-card-subtitle ><span class="review-description">Check your medical history</span></mat-card-subtitle>
+            </div>
+          </div>
+          <div >
+            <mat-card-subtitle ><mat-icon class="icon" >trending_flat</mat-icon> </mat-card-subtitle>
+          </div>
+        </mat-card>
+
+
+
+      </div>
+
+    </div></div>
+  </div>
+</div>
+
+

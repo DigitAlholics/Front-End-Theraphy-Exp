@@ -1,0 +1,109 @@
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+    <div><div class="professional-profile" *ngIf="physiotherapist$ | async as physiotherapist">
+
+      <div class="profile-header">
+        <div class="profile-header_left">
+          <mat-icon [routerLink]="'/physiotherapists'">keyboard_arrow_left</mat-icon>
+          <h1>Professional's profile</h1>
+        </div>
+        <div class="profile-header_right">
+          <button mat-raised-button class="div-button" [routerLink]="['/schedule-appointments',physiotherapist.id]" color="primary">Schedule an Appointment</button>
+        </div>
+      </div>
+
+      <div class="profile-body">
+        <div class="profile-body_right">
+          <img src="{{ physiotherapist.photoUrl}}" alt="{{ physiotherapist.firstName + ' ' + physiotherapist.paternalSurname}}">
+        </div>
+        <div class="profile-body_left">
+          <div class="profile-body-left_name">
+            <h1>{{ physiotherapist.firstName + ' ' + physiotherapist.paternalSurname}}</h1>
+            <h3>Physiotherapist</h3>
+          </div>
+          <ul class="profile_body_left-information-top">
+            <ul class="card-information">
+              <div class="card-information-text">
+                <li>
+                  <h3>Patients</h3>
+                </li>
+                <li>
+                  <h2>{{ '+ ' + physiotherapist.consultationsQuantity}}</h2>
+                </li>
+              </div>
+            </ul>
+
+            <ul class="card-information">
+              <div class="card-information-text">
+                <li>
+                  <h3>Years of experience</h3>
+                </li>
+                <li>
+                  <h2>{{ '+ ' + (physiotherapist.age - 10)}}</h2>
+                </li>
+              </div>
+            </ul>
+          </ul>
+          <ul class="profile_body_left-information-down">
+            <ul class="card-information">
+              <div class="card-information-text">
+                <li>
+                  <h3>Age</h3>
+                </li>
+                <li>
+                  <h2>{{ physiotherapist.age }}</h2>
+                </li>
+              </div>
+            </ul>
+
+            <ul class="card-information">
+              <div class="card-information-text">
+                <li>
+                  <h3>Cost Consultation</h3>
+                </li>
+                <li>
+                  <h2>{{ 'S/. ' + physiotherapist.age * 2}}</h2>
+                </li>
+              </div>
+            </ul>
+          </ul>
+        </div>
+      </div>
+
+      <div class="profile-footer">
+
+        <div class="profile-footer_top">
+          <h1>Education</h1>
+        </div>
+        <div class="profile-footer_body">
+          <ul>
+            <div class="university">
+              <li>
+                <h3>Bachillerato en Medicina General en la UPC</h3>
+              </li>
+            </div>
+            <div class="university">
+              <li>
+                <h3>Especialización en Podología en la PUCP</h3>
+              </li>
+
+            </div>
+
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="btn">
+        <button mat-raised-button class="div-button-reviews" color="primary" [routerLink]="['/reviews', physiotherapist.id]" >Reviews</button>
+      </div>
+
+    </div></div>
+  </div>
+</div>
+
+

@@ -1,0 +1,19 @@
+<mat-sidenav #sidenav mode="side" opened="true">
+  <div class="logo-container" (click)="isExpanded = !isExpanded">
+    <img src="assets/logo-image.png" alt="asdsd" class="logo-image">
+    <span *ngIf="isExpanded" class="logo-text">Theraphy</span>
+  </div>
+  <mat-divider></mat-divider>
+  <mat-nav-list class="sidenav-menu" >
+    <div *ngFor="let data of sidenavData">
+      <mat-list-item class="sidenav-item" routerLinkActive="active-link" [routerLink]="[data.routeLink]">
+        <mat-icon mat-list-icon color="primary" [matTooltip]="data.label" matTooltipPosition="right">{{data.icon}}</mat-icon>
+        <p mat-line *ngIf="isExpanded"><span class="sidenav-item-text">{{ data.label }}</span></p>
+      </mat-list-item>
+    </div>
+    <mat-list-item class="sidenav-item" routerLinkActive="false" [routerLink]="['/']">
+      <mat-icon mat-list-icon color="primary" matTooltip="Log out" matTooltipPosition="right">logout</mat-icon>
+      <p mat-line *ngIf="isExpanded"><span class="sidenav-item-text">Log Out</span></p>
+    </mat-list-item>
+  </mat-nav-list>
+</mat-sidenav>

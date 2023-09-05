@@ -1,0 +1,45 @@
+<div class="page">
+  <div class="sidenav">
+    <div *ngIf="userType===types[0]; else elseTemplate">
+      <app-sidenav></app-sidenav>
+    </div>
+    <ng-template #elseTemplate>
+      <app-physiotherapist-sidenav></app-physiotherapist-sidenav>
+    </ng-template>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+    <div><div  class="treatment-info" *ngIf="treatment$ | async as treatment">
+      <div class="content">
+        <div class="left-content">
+          <div class="nav-back">
+            <mat-icon [routerLink]="'/treatments'">keyboard_arrow_left</mat-icon>
+            <h1>{{treatment.title}}</h1>
+          </div>
+          <div class="treatment-text">
+            <h2>Sessions Quantity: {{treatment.sessionsQuantity}}</h2>
+            <p>
+              {{treatment.description}}
+            </p>
+          </div>
+
+        </div>
+        <div class="content-img">
+          <img  class="card-content-img"  src="{{treatment.photoUrl}}" alt="{{treatment.title}}" >
+        </div>
+      </div>
+      <div class="btn-enroll">
+
+        <div *ngIf="userType===types[0]; else elseTemplate">
+          <button mat-raised-button class="card-button" color="primary" (click)="addTreatmentByPatient()"  >Enroll</button>
+        </div>
+        <ng-template #elseTemplate>
+          <button mat-raised-button class="card-button" color="primary" [routerLink]="['/video-sessions', this.treatmentId]" >View Sessions</button>
+        </ng-template>
+      </div>
+
+    </div></div>
+  </div>
+</div>
+
+

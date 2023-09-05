@@ -1,0 +1,39 @@
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+    <div><h1>My Treatments</h1>
+      <p>Pick up your treatments where you left off.</p>
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Treatment</mat-label>
+          <input type="search" #inputSearch matInput placeholder="Lumbar Spine" (keyup.enter)="getTreatmentByQuery(inputSearch.value)">
+          <mat-icon color="primary" matSuffix>search</mat-icon>
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="search-btn" (click)="getTreatmentByQuery(inputSearch.value)"><span>Search</span></button>
+      </form>
+
+      <mat-divider></mat-divider>
+
+      <div class="cards" *ngFor="let treatment of treatmentsByPatient">
+        <div *ngIf="treatment.patient.id===currentUser">
+          <mat-card class="example-card">
+            <mat-card-title-group>
+              <mat-card-title><span>{{ treatment.treatment.title }}</span></mat-card-title>
+              <mat-card-subtitle><span>{{'Sessions Quantity: '+treatment.treatment.sessionsQuantity}}</span></mat-card-subtitle>
+              <mat-card-subtitle><mat-progress-bar mode="determinate" value="{{ treatment.progress }}"></mat-progress-bar></mat-card-subtitle>
+              <mat-card-subtitle>{{ treatment.progress }}%</mat-card-subtitle>
+              <img mat-card-md-image src="{{treatment.treatment.photoUrl}}" alt="{{ treatment.treatment.title }}">
+            </mat-card-title-group>
+            <mat-card-content>
+              <button mat-raised-button color="primary" class="info-btn" [routerLink]="['/video-sessions', treatment.treatment.id]"><span>Continue</span></button>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div></div>
+  </div>
+</div>
+
+

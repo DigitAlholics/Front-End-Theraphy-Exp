@@ -1,0 +1,150 @@
+.page {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.contents {
+  width: 100%;
+  height: 100%;
+  margin-left: 48px;
+  margin-right: 48px;
+}
+.sidenav {
+  height: 100%;
+}
+
+
+li{
+  list-style: none;
+}
+h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+h1,h3 {
+
+  font-family: 'IBM Plex Sans', "Helvetica Neue", sans-serif;
+}
+mat-icon {
+  cursor: pointer;
+  font-size: 36px;
+  width: 36px;
+  height: 36px;
+}
+
+span{
+  font-weight: normal;
+  font-size: 15px;
+}
+
+/* Header */
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.header_left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+/* Medical History Patient */
+
+.example-card{
+  margin-top: 20px;
+  margin-left:2%;
+  width:30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #007AF0;
+}
+
+.user-info{
+  display:flex;
+  align-items: center;
+  width:80%;
+  margin-left: 5%;
+}
+
+
+.user-text{
+  margin-left:5%;
+}
+
+.user-ico{
+  margin-left:2%;
+  margin-top: 5%;
+
+}
+
+/* General Information */
+
+.general-info{
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  margin-top: 25px;
+  border: .1px solid #007AF0;
+  width:55%;
+  height: 200px;
+  margin-left:2%
+}
+
+.general-info-top{
+  background-color: #007AF0;
+  border-top-right-radius: 5px;
+  border-top-left-radius:5px ;
+  color: white;
+  padding-left: 25px;
+  height: 40px;
+}
+
+.general-info-body{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.general-info-data img{
+  margin-left: 28%;
+  width: 50px;
+  height: 50px;
+}
+
+/* Title Separator */
+
+.title-separator{
+  margin-top:25px;
+  margin-left: 2%;
+}
+
+mat-divider{
+  margin-top:5px;
+  height: 1px;
+  width:100%;
+  background-color: black;
+}
+
+/* Items in Allergies and Pathological History */
+
+.items-card{
+  margin-top: 20px;
+  margin-left:2%;
+  width:52.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #007AF0;
+}
+
+.items-card{
+  font-weight: lighter;
+}
+
+
+

@@ -1,0 +1,158 @@
+<div class="page" >
+  <div class="sidenav">
+    <div *ngIf="userType===types[0]; else elseTemplate">
+      <app-sidenav></app-sidenav>
+    </div>
+    <ng-template #elseTemplate>
+      <app-physiotherapist-sidenav></app-physiotherapist-sidenav>
+    </ng-template>
+  </div>
+  <div class="contents" >
+    <app-header></app-header>
+    <h1>Medical appointments</h1>
+    <p>Check your medical appointments.</p>
+
+    <div *ngIf="userType===types[0]; else treatmentsPhysiotherapist" >
+      <form class="example-form">
+
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Physiotherapist</mat-label>
+          <input type="search" #inputSearch matInput placeholder="Jhon Doe" (keyup)=" getAppointmentByPhysiotherapistName(inputSearch.value)">
+          <mat-icon color="primary" matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu" class="search-btn"><span>Filter</span></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="filterToDone()">Done</button>
+          <button mat-menu-item (click)="filterToToDO()">To do</button>
+        </mat-menu>
+
+
+      </form>
+
+      <div class="cards" *ngFor="let appointment of appointments">
+        <div *ngIf="filter; else treatmentsToDoPatient">
+
+          <mat-card class="example-card" *ngIf="appointment.patient.id===currentUser && appointment.done==true.toString()">
+
+            <div class="information">
+
+              <div class="name">
+                <mat-card-title><span>{{ appointment.physiotherapist.firstName }}</span></mat-card-title>
+              </div>
+              <div class="card-information-data">
+                <div>
+                  <mat-card-subtitle><span>{{appointment.topic}}</span></mat-card-subtitle>
+                  <mat-card-subtitle><span>{{appointment.scheduledDate}} - {{4}}:{{45}} </span></mat-card-subtitle>
+                </div>
+                <div class="btn">
+                  <button mat-raised-button color="primary" class="viewProfile-btn"  [routerLink]="['/diagnosis', appointment.id]"><span>Diagnosis</span></button>
+                </div>
+              </div>
+
+            </div>
+          </mat-card>
+
+        </div>
+
+        <ng-template #treatmentsToDoPatient>
+
+          <mat-card class="example-card" *ngIf="appointment.patient.id===currentUser && appointment.done==false.toString()">
+
+            <div class="information">
+
+              <div class="name">
+                <mat-card-title><span>{{ appointment.physiotherapist.firstName }}</span></mat-card-title>
+              </div>
+
+              <div class="card-information-data">
+                <div>
+                  <mat-card-subtitle><span>{{appointment.topic}}</span></mat-card-subtitle>
+                  <mat-card-subtitle><span>{{appointment.scheduledDate}} - {{4}}:{{45}} </span></mat-card-subtitle>
+                </div>
+              </div>
+
+            </div>
+
+          </mat-card>
+
+
+        </ng-template>
+      </div>
+    </div>
+
+    <ng-template #treatmentsPhysiotherapist>
+      <form class="example-form">
+
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Patient </mat-label>
+          <input type="search" #inputSearch matInput placeholder="Jhon Doe" (keyup)="getAppointmentByPatientName(inputSearch.value)">
+          <mat-icon color="primary" matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu" class="search-btn"><span>Filter</span></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="filterToDone()">Done</button>
+          <button mat-menu-item (click)="filterToToDO()">To do</button>
+        </mat-menu>
+
+
+      </form>
+
+      <div class="cards" *ngFor="let appointment of appointments">
+        <div *ngIf="filter; else treatmentsToDoPhysiotherapist">
+
+          <mat-card class="example-card" *ngIf="appointment.physiotherapist.id===currentUser && appointment.done==true.toString()">
+
+            <div class="information">
+
+              <div class="name">
+                <mat-card-title><span>{{ appointment.patient.firstName}}</span></mat-card-title>
+              </div>
+              <div class="card-information-data">
+                <div>
+                  <mat-card-subtitle><span>{{appointment.topic}}</span></mat-card-subtitle>
+                  <mat-card-subtitle><span>{{appointment.scheduledDate}} - {{4}}:{{45}} </span></mat-card-subtitle>
+                </div>
+                <div class="btn">
+                  <button mat-raised-button color="primary" class="viewProfile-btn"  [routerLink]="['/diagnosis', appointment.id]"><span>Diagnosis</span></button>
+                </div>
+              </div>
+
+            </div>
+          </mat-card>
+
+        </div>
+        <ng-template #treatmentsToDoPhysiotherapist>
+
+          <mat-card class="example-card" *ngIf="appointment.physiotherapist.id===currentUser && appointment.done==false.toString()">
+
+            <div class="information">
+
+              <div class="name">
+                <mat-card-title><span>{{ appointment.patient.firstName}}</span></mat-card-title>
+              </div>
+              <div class="card-information-data">
+                <div>
+                  <mat-card-subtitle><span>{{appointment.topic}}</span></mat-card-subtitle>
+                  <mat-card-subtitle><span>{{appointment.scheduledDate}} - 4:{{45}} </span></mat-card-subtitle>
+                </div>
+                <div class="btn">
+                  <button mat-raised-button color="primary" class="viewProfile-btn"  [routerLink]="['/diagnosis', appointment.id]"><span>Diagnosis</span></button>
+                </div>
+              </div>
+
+            </div>
+          </mat-card>
+
+
+        </ng-template>
+      </div>
+    </ng-template>
+
+  </div>
+</div>
+
+

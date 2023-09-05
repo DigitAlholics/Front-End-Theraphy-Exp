@@ -1,0 +1,103 @@
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+    <div><div class="patients-infos">
+
+      <div class="patient-info">
+        <div class="patient-info_title">
+          <h1 [routerLink]="['/medical-appointments']" >My Appointments ></h1>
+        </div>
+        <div class="patient-info_body">
+
+          <ul>
+            <div class="date" *ngFor="let appointment of appointments">
+              <div class="date" *ngIf="appointment.patient.id == currentUser
+                                    && appointment.done == false.toString()">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="notifications"></mat-icon>
+                <li>
+                  <h3>{{appointment.scheduledDate}}</h3>
+                </li>
+              </div>
+
+            </div>
+
+
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="patient-info">
+        <div class="patient-info_title">
+          <h1 [routerLink]="['/diagnosis']">Diagnosis ></h1>
+        </div>
+        <div class="patient-info_body">
+          <ul>
+            <div class="date" *ngFor="let appointment of appointments">
+              <div *ngIf="appointment.patient.id == currentUser">
+                <div class="date" *ngFor="let physiotherapist of physiotherapists">
+                  <img *ngIf="appointment.physiotherapist.id == physiotherapist.id
+                          && appointment.done"
+                       :src="{{physiotherapist.photoUrl}}">
+                  <li>
+                    <h3 *ngIf="appointment.physiotherapist.id == physiotherapist.id
+                          && appointment.done"
+                        class="diagnosis">{{appointment.diagnosis}}</h3>
+                  </li>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="patient-info">
+        <div class="patient-info_title">
+          <h1 [routerLink]="['/my-treatments']">My Treatments ></h1>
+        </div>
+        <div class="patient-info_body" >
+          <ul>
+            <div class="date" *ngFor="let treatment of myTreatments">
+              <div  class="date" *ngIf="treatment.patient.id == currentUser">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="live_tv"></mat-icon>
+
+                <li>
+                  <h3>{{treatment.treatment.title}}</h3>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+      <div class="progress">
+        <div class="progress_title">
+          <h1>My Progress ></h1>
+        </div>
+        <div class="progress_body" >
+          <div class="progress-treatments" *ngFor="let treatment of myTreatments">
+            <div class="progress-treatment" *ngIf="treatment.patient.id == currentUser">
+
+              <img :src="{{treatment.treatment.photoUrl}}">
+
+              <div class="progress-treatment_left">
+                <h2>{{treatment.treatment.title}}</h2>
+
+                <mat-progress-bar mode="determinate" value="{{treatment.progress}}">
+                </mat-progress-bar>
+                <h3>{{treatment.progress}}%</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+  </div>
+</div>
+
+

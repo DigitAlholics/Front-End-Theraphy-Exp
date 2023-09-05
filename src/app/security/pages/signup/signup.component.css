@@ -1,0 +1,47 @@
+.signup-container {
+  height: 100vh;
+  background-color: #007AF0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'IBM Plex Sans', "Helvetica Neue", sans-serif;
+}
+.signup-section {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 55%;
+  height: 100%;
+}
+.signup-form-container {
+  padding: 0 20%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 28px;
+}
+
+.signup-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.logo-image {
+  width: 56px;
+}
+.logo-text {
+  font-weight: 600;
+  font-size: 16px;
+}
+.signup-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.signup-form-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+.signup-button {
+  width: 100%;
+}

@@ -1,0 +1,30 @@
+<div class="page">
+  <div class="sidenav">
+    <div *ngIf="userType===types[0]; else elseTemplate">
+      <app-sidenav></app-sidenav>
+    </div>
+    <ng-template #elseTemplate>
+      <app-physiotherapist-sidenav></app-physiotherapist-sidenav>
+    </ng-template>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+    <div><div class="list" *ngIf="treatment$ | async as treatment">
+
+
+      <h1><mat-icon [routerLink]="['/treatments']">keyboard_arrow_left</mat-icon>Session {{s_number}}</h1>
+      <p>Enjoy your sessions</p>
+
+      <div class="move">
+
+        <h2 class="backButton" *ngIf="s_value; else elseTemplate2" (click)="prevSession()"><-- Session {{s_number-1}}</h2>
+        <ng-template #elseTemplate2>
+          <h2 class="backButton" (click)="prevSession()"></h2></ng-template>
+        <h2 class="nextButton" (click)="nextSession()">Session {{s_number+1}}  --></h2>
+      </div>
+      <iframe width="1080" height="720" src="https://www.youtube.com/embed/tH4eV3DJUio" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div></div>
+  </div>
+</div>
+
+

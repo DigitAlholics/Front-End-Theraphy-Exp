@@ -1,0 +1,398 @@
+{
+  "treatments_by_patient": [
+    {
+      "id": 1,
+      "treatment_id": 1,
+      "patient_id": 1,
+      "title": "Lumbar Spine",
+      "description": "Your lumbar spine consists of the five bones (vertebra) in your lower back. Your lumbar vertebrae, known as L1 to L5, are the largest of your entire spine. Your lumbar spine is located below your 12 chest (thoracic) vertebra and above the five fused bones that make up your triangular-shaped sacrum bone.",
+      "sessions_quantity": 28,
+      "physiotherapist_id": 1,
+      "photo": "https://orientacion.universia.edu.pe/imgs2011/imagenes/1k---2020--2020_10_30_143836@2x.766.jpg",
+      "video_sessions": [
+        "https://www.youtube.com/watch?v=hGU2ceM8aVY&t=4032s"
+      ],
+      "registration_date": "15/03/2022",
+      "progress": 56
+    },
+    {
+      "id": 2,
+      "treatment_id": 2,
+      "patient_id": 2,
+      "title": "Neck Spine",
+      "description": "Your lumbar spine consists of the five bones (vertebra) in your lower back. Your lumbar vertebrae, known as L1 to L5, are the largest of your entire spine. Your lumbar spine is located below your 12 chest (thoracic) vertebra and above the five fused bones that make up your triangular-shaped sacrum bone.",
+      "sessions_quantity": 28,
+      "physiotherapist_id": 1,
+      "photo": "https://orientacion.universia.edu.pe/imgs2011/imagenes/1k---2020--2020_10_30_143836@2x.766.jpg",
+      "video_sessions": [
+        "https://www.youtube.com/watch?v=hGU2ceM8aVY&t=4032s"
+      ],
+      "registration_date": "24/05/2022",
+      "progress": 35
+    },
+    {
+      "id": 3,
+      "treatment_id": 3,
+      "patient_id": 2,
+      "title": "Obesity",
+      "description": "Your lumbar spine consists of the five bones (vertebra) in your lower back. Your lumbar vertebrae, known as L1 to L5, are the largest of your entire spine. Your lumbar spine is located below your 12 chest (thoracic) vertebra and above the five fused bones that make up your triangular-shaped sacrum bone.",
+      "sessions_quantity": 28,
+      "physiotherapist_id": 1,
+      "photo": "https://orientacion.universia.edu.pe/imgs2011/imagenes/1k---2020--2020_10_30_143836@2x.766.jpg",
+      "video_sessions": [
+        "https://www.youtube.com/watch?v=hGU2ceM8aVY&t=4032s"
+      ],
+      "registration_date": "17/09/2022",
+      "progress": 10
+    }
+  ],
+  "treatments": [
+    {
+      "id": 1,
+      "title": "Lumbar Spine",
+      "description": "Your lumbar spine consists of the five bones (vertebra) in your lower back. Your lumbar vertebrae, known as L1 to L5, are the largest of your entire spine. Your lumbar spine is located below your 12 chest (thoracic) vertebra and above the five fused bones that make up your triangular-shaped sacrum bone.",
+      "sessions_quantity": 28,
+      "physiotherapist_id": 1,
+      "photo": "https://orientacion.universia.edu.pe/imgs2011/imagenes/1k---2020--2020_10_30_143836@2x.766.jpg",
+      "video_sessions": [
+        "https://www.youtube.com/watch?v=hGU2ceM8aVY&t=4032s"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Neck Spine",
+      "description": "Your neck spine consists of the first seven vertebrae in your spine. It provides support for the weight of your head, surrounds and protects your spinal cord, and allows for a wide range of head motions. Many conditions affect this area of your spine, including neck pain, arthritis, degenerative bone and disk disease, and stenosis. Many treatment options are available.",
+      "sessions_quantity": 30,
+      "physiotherapist_id": 2,
+      "photo": "https://orientacion.universia.edu.pe/imgs2011/imagenes/1k---2020--2020_10_30_143836@2x.766.jpg",
+      "video_sessions": [
+        "https://www.youtube.com/watch?v=hGU2ceM8aVY&t=4032s"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Obesity",
+      "description": "Obesity is a complex disease involving an excessive amount of body fat. Obesity isn't just a cosmetic concern. It's a medical problem that increases the risk of other diseases and health problems, such as heart disease, diabetes, high blood pressure and certain cancers.",
+      "sessions_quantity": 20,
+      "physiotherapist_id": 3,
+      "photo": "https://orientacion.universia.edu.pe/imgs2011/imagenes/1k---2020--2020_10_30_143836@2x.766.jpg",
+      "video_sessions": [
+        "https://www.youtube.com/watch?v=hGU2ceM8aVY&t=4032s"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Knees",
+      "description": "Knee pain is a common complaint that affects people of all ages. Knee pain may be the result of an injury, such as a ruptured ligament or torn cartilage. Medical conditions — including arthritis, gout and infections — also can cause knee pain. Many types of minor knee pain respond well to self-care measures.",
+      "sessions_quantity": 15,
+      "physiotherapist_id": 1,
+      "photo": "https://orientacion.universia.edu.pe/imgs2011/imagenes/1k---2020--2020_10_30_143836@2x.766.jpg",
+      "video_sessions": [
+        "https://www.youtube.com/watch?v=hGU2ceM8aVY&t=4032s"
+      ]
+    }
+  ],
+  "physiotherapists": [
+    {
+      "id": 1,
+      "user_id": 4,
+      "first_name": "Jhon",
+      "paternal_surname": "Doe",
+      "maternal_surname": "Hammer",
+      "specialization": "Neck",
+      "age": 24,
+      "location": "Surco",
+      "birthdate": "24/05/1998",
+      "email": "jhondoe@gmail.com",
+      "rating": 4.5,
+      "consultations_quantity": 30,
+      "photo": "https://clinicamg.com/wp-content/uploads/2016/01/Jose.jpg"
+    },
+    {
+      "id": 2,
+      "user_id": 5,
+      "first_name": "Joel",
+      "paternal_surname": "Villanueva",
+      "maternal_surname": "Del Rio",
+      "specialization": "Knees",
+      "age": 20,
+      "location": "Miraflores",
+      "birthdate": "24/05/1999",
+      "email": "jhondoe@gmail.com",
+      "rating": 3.2,
+      "consultations_quantity": 33,
+      "photo": "https://clinicamg.com/wp-content/uploads/2016/01/Jose.jpg"
+    },
+    {
+      "id": 3,
+      "user_id": 6,
+      "first_name": "William",
+      "paternal_surname": "Cifuentes",
+      "maternal_surname": "Lopez",
+      "specialization": "Geriatrics",
+      "age": 26,
+      "location": "San Martin de Porres",
+      "birthdate": "24/05/1999",
+      "email": "jhondoe@gmail.com",
+      "rating": 5,
+      "consultations_quantity": 50,
+      "photo": "https://clinicamg.com/wp-content/uploads/2016/01/Jose.jpg"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "patient_id": 1,
+      "physiotherapist_id": 1,
+      "physiotherapist": "Jhon Doe",
+      "reviewer": "Luis Pineda",
+      "stars": 5,
+      "description": "The best medical check-up I've ever had, I'm cured of everything."
+    },
+    {
+      "id": 2,
+      "patient_id": 1,
+      "physiotherapist_id": 1,
+      "physiotherapist": "Jhon Doe",
+      "reviewer": "Luis Pineda",
+      "stars": 3,
+      "description": "The best medical check-up I've ever had, I'm cured of everything."
+    },
+    {
+      "id": 3,
+      "patient_id": 2,
+      "physiotherapist_id": 2,
+      "physiotherapist": "Joel Villanueva",
+      "reviewer": "Leonel Messi",
+      "stars": 3,
+      "description": "The best medical check-up I've ever had, I'm cured of everything."
+    },
+    {
+      "id": 4,
+      "patient_id": 1,
+      "physiotherapist_id": 3,
+      "physiotherapist": "Luis Pineda",
+      "reviewer": "Fernando Alcántara",
+      "stars": 2,
+      "description": "The best medical check-up I've ever had, I'm cured of everything."
+    }
+  ],
+  "patients": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "first_name": "Luis",
+      "last_name": "Pineda",
+      "age": 19,
+      "birthday": "03/08/2003",
+      "email": "jhondoe@gmail.com",
+      "appointment_quantity": 12,
+      "photo": "https://clinicamg.com/wp-content/uploads/2016/01/Jose.jpg",
+      "created_at": "10/11/2022"
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "first_name": "Leonel",
+      "last_name": "Messi",
+      "age": 34,
+      "birthday": "03/08/1988",
+      "email": "jhondoe@gmail.com",
+      "appointment_quantity": 11,
+      "photo": "https://clinicamg.com/wp-content/uploads/2016/01/Jose.jpg",
+      "created_at": "10/11/2022"
+    },
+    {
+      "id": 3,
+      "user_id": 3,
+      "first_name": "Elver",
+      "last_name": "Galar",
+      "age": 19,
+      "birthday": "03/08/2003",
+      "email": "jhondoe@gmail.com",
+      "appointment_quantity": 12,
+      "photo": "https://clinicamg.com/wp-content/uploads/2016/01/Jose.jpg",
+      "created_at": "10/11/2022"
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "patient_id": 1,
+      "patient_name": "Luis Pineda",
+      "physiotherapist_id": 1,
+      "physiotherapist_name": "Jhon Doe",
+      "date": "14/09/2022",
+      "hour": 13,
+      "minute": 30,
+      "ampm": "pm",
+      "topic": "Obesity",
+      "done": true,
+      "diagnosis": "keep moving."
+    },
+    {
+      "id": 2,
+      "patient_id": 1,
+      "patient_name": "Luis Pineda",
+      "physiotherapist_id": 2,
+      "physiotherapist_name": "Joel Villanueva",
+      "date": "18/10/2022",
+      "hour": 10,
+      "minute": 30,
+      "ampm": "am",
+      "topic": "Backache",
+      "done": false,
+      "diagnosis": ""
+    },
+    {
+      "id": 3,
+      "patient_id": 2,
+      "patient_name": "Leonel Messi",
+      "physiotherapist_id": 3,
+      "physiotherapist_name": "William Cifuentes",
+      "date": "24/10/2022",
+      "hour": 7,
+      "minute": 30,
+      "ampm": "am",
+      "topic": "Knees",
+      "done": false,
+      "diagnosis": ""
+    }
+  ],
+  "medical-histories": [
+    {
+      "id": 1,
+      "patient_id": 2,
+      "patient_name": "Leonel Messi",
+      "height": 1.8,
+      "weight": 70,
+      "body_mass": 32,
+      "allergies": [
+        "Penicillin",
+        "Insulin",
+        "Peanut"
+      ],
+      "pathological_history": [
+        "Cancer",
+        "Arterial Hypertension",
+        "AIDS",
+        "Gonorrhea"
+      ]
+    },
+    {
+      "id": 2,
+      "patient_id": 1,
+      "patient_name": "Luis Pineda",
+      "height": 1.8,
+      "weight": 70,
+      "body_mass": 32,
+      "allergies": [
+        "Penicillin",
+        "Insulin"
+      ],
+      "pathological_history": []
+    },
+    {
+      "id": 3,
+      "patient_id": 3,
+      "patient_name": "Elver Galar",
+      "height": 1.8,
+      "weight": 70,
+      "body_mass": 32,
+      "allergies": [
+        "Penicillin",
+        "Insulin",
+        "Peanut"
+      ],
+      "pathological_history": [
+        "Cancer",
+        "Arterial Hypertension",
+        "AIDS",
+        "Gonorrhea"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "luis@email.com",
+      "password": "luis12",
+      "type": "patient"
+    },
+    {
+      "id": 2,
+      "email": "leo@email.com",
+      "password": "leo12",
+      "type": "patient"
+    },
+    {
+      "id": 3,
+      "email": "elver@email.com",
+      "password": "elver12",
+      "type": "patient"
+    },
+    {
+      "id": 4,
+      "email": "jhon@email.com",
+      "password": "jhon12",
+      "type": "physiotherapist"
+    },
+    {
+      "id": 5,
+      "email": "joe@email.com",
+      "password": "joe12",
+      "type": "physiotherapist"
+    },
+    {
+      "id": 6,
+      "email": "william@email.com",
+      "password": "william12",
+      "type": "physiotherapist"
+    }
+  ],
+  "educations": [
+    {
+      "id": 1,
+      "physiotherapist_id": 1,
+      "physiotherapist_name": "Jhon Doe Hammer",
+      "specialization": "Neck",
+      "universities": [
+        "UPC",
+        "PUCP"
+      ],
+      "degrees": [
+        "Bachillerato en Medicina General en la UPC",
+        "Especialización en Podología en la PUCP"
+
+      ]
+    },
+    {
+      "id": 2,
+      "physiotherapist_id": 2,
+      "physiotherapist_name": "Joel Villanueva Del Rio",
+      "specialization": "Knees",
+      "universities": [
+        "UPC",
+        "UNMSM"
+      ],
+      "degrees": [
+        "Bachillerato en Medicina General en la UPC",
+        "Especialización en Podología en la UNMSM"
+
+      ]
+    },
+    {
+      "id": 3,
+      "physiotherapist_id": 3,
+      "physiotherapist_name": "William Cifuentes Lopez",
+      "specialization": "Geriatrics",
+      "universities": [
+        "UPC"
+      ],
+      "degrees": [
+        "Bachillerato en Medicina General en la UPC"
+
+      ]
+    }
+  ]
+}

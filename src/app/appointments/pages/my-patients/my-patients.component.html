@@ -1,0 +1,42 @@
+<div class="page">
+  <div class="sidenav">
+    <app-physiotherapist-sidenav></app-physiotherapist-sidenav>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+    <div><h1>My Patients</h1>
+      <p>Find all your patients</p>
+
+      <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Patient</mat-label>
+          <input type="search" #inputSearch matInput placeholder="Jhon Doe">
+          <mat-icon color="primary" matSuffix>search</mat-icon>
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="search-btn" (click)="getPat(inputSearch.value)"><span>Search</span></button>
+      </form>
+      <mat-divider></mat-divider>
+
+      <div class="cards" *ngFor="let patient of myPatients">
+        <mat-card class="example-card">
+          <mat-card-title-group>
+            <mat-card-title><span>{{ patient.firstName + ' ' + patient.lastName }}</span></mat-card-title>
+            <mat-card-subtitle><span>{{'Appointment Consultancies: '+ patient.appointmentQuantity}}</span></mat-card-subtitle>
+            <mat-card-subtitle> <span>{{'Age: ' + patient.age}}</span></mat-card-subtitle>
+            <img mat-card-md-image src="{{ patient.photoUrl}}" alt="{{ patient.firstName + ' ' + patient.lastName }}">
+          </mat-card-title-group>
+          <!--<mat-card-content>
+            <button mat-raised-button color="primary" class="viewProfile-btn" [routerLink]="['/professional-profile-patient',physiotherapist.id]"><span>View Profile</span></button>
+          </mat-card-content>-->
+
+        </mat-card>
+      </div></div>
+
+
+  </div>
+</div>
+
+
+
+
+

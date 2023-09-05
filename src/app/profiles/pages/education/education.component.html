@@ -1,0 +1,70 @@
+<div class="page">
+  <div class="sidenav">
+    <app-physiotherapist-sidenav></app-physiotherapist-sidenav>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+    <div><div class="header">
+      <div class="header_left">
+        <mat-icon [routerLink]="['/profile-physiotherapist']">keyboard_arrow_left</mat-icon>
+        <h1>Education</h1>
+      </div>
+    </div>
+
+      <div class="cards" *ngFor="let education of educations">
+        <div *ngIf="education.physiotherapistId===currentUser">
+
+          <mat-card class="example-card" >
+            <div class="user-info">
+              <div class="user-ico">
+                <mat-card-subtitle ><mat-icon class="icon" color="primary" >account_circle</mat-icon>
+                </mat-card-subtitle>
+              </div>
+              <div class="user-text">
+                <mat-card-title><span>Dr. {{education.physiotherapistName}}</span></mat-card-title>
+              </div>
+            </div>
+          </mat-card>
+
+          <div class="title-separator">
+            <h1>Universities</h1>
+            <mat-divider></mat-divider>
+          </div>
+
+          <div class="universities" >
+          <div *ngFor="let university of education.universities">
+            <div class="general-info-data">
+            <mat-icon  color="primary" >school</mat-icon>
+            <h2>{{university}}</h2>
+            </div>
+          </div>
+          </div>
+
+
+          <div class="general-info">
+
+            <div class="general-info-top">
+              <h1>Main Degrees</h1>
+            </div>
+            <div  class="general-info-body" *ngFor="let degree of education.degrees">
+
+              <div class="degree">
+                <div class="degree-icon">
+                <mat-icon  color="primary" >school</mat-icon>
+                </div>
+              <div class="degree-description">
+                <span>{{degree}}</span>
+              </div>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+
+      </div></div>
+  </div>
+</div>
+
+

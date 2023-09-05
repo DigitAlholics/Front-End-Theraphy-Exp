@@ -1,0 +1,83 @@
+<div class="page">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+    <div><div class="header">
+      <div class="header_left">
+        <mat-icon [routerLink]="['/profile-patient']">keyboard_arrow_left</mat-icon>
+        <h1>Medical History</h1>
+      </div>
+    </div>
+
+      <div class="cards" *ngFor="let medicalHistory of medicalHistories">
+        <div *ngIf="medicalHistory.patientId===currentUser">
+
+          <mat-card class="example-card" >
+            <div class="user-info">
+              <div class="user-ico">
+                <mat-card-subtitle ><mat-icon class="icon" color="primary" >account_circle</mat-icon>
+                </mat-card-subtitle>
+              </div>
+              <div class="user-text">
+                <mat-card-title><span>{{medicalHistory.patientName}}</span></mat-card-title>
+              </div>
+            </div>
+          </mat-card>
+
+          <div class="general-info">
+
+            <div class="general-info-top">
+              <h1>General Information</h1>
+            </div>
+            <div  class="general-info-body">
+
+              <div class="general-info-data">
+                <img mat-card-md-image src="https://raw.githubusercontent.com/DigitAlholics-3-0/Front-End-Theraphy/master/src/assets/height-icon.png" alt="Height icon">
+                <h2>Height: {{medicalHistory.height}}m</h2>
+              </div>
+
+              <div class="general-info-data">
+                <img mat-card-md-image src="https://raw.githubusercontent.com/DigitAlholics-3-0/Front-End-Theraphy/master/src/assets/weight-icon.png" alt="Weight icon">
+                <h2>Weight: {{medicalHistory.weight}}kg</h2>
+              </div>
+
+              <div class="general-info-data">
+              
+                <img mat-card-md-image src="../../../../assets/body-mass-icon.png" alt="Body Mass icon">
+                <h2>Body Mass: {{medicalHistory.bodyMass}}</h2>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="title-separator">
+            <h1>Allergies</h1>
+            <mat-divider></mat-divider>
+          </div>
+
+          <mat-card class="items-card" >
+            <span>{{medicalHistory.allergies}}</span>
+          </mat-card>
+
+          <div class="title-separator">
+            <h1>Pathological History</h1>
+            <mat-divider></mat-divider>
+          </div>
+
+          <mat-card class="items-card" >
+            <span>{{medicalHistory.pathologicalHistory}}</span>
+          </mat-card>
+
+
+
+        </div>
+
+      </div></div>
+  </div>
+</div>
+
+

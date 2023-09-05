@@ -1,0 +1,74 @@
+<div class="page">
+  <div class="sidenav">
+    <app-physiotherapist-sidenav></app-physiotherapist-sidenav>
+  </div>
+  <div class="contents">
+    <app-header></app-header>
+    <div><div class="patients-infos">
+
+      <div class="patient-info">
+        <div class="patient-info_title">
+          <h1 [routerLink]="['/my-appointments-doctor']">My Appointments > </h1>
+        </div>
+        <div class="patient-info_body">
+          <ul>
+            <div class="date" *ngFor="let appointment of appointments">
+              <div class="date" *ngIf="appointment.physiotherapist.id == currentUser
+                                    && appointment.done===false.toString()">
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="notifications"></mat-icon>
+                <li>
+                  <h3>{{appointment.scheduledDate}}</h3>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+      <div class="patient-info">
+        <div class="patient-info_title">
+          <h1 [routerLink]="['/my-treatments']">My Treatments ></h1>
+        </div>
+        <div class="patient-info_body" >
+          <ul>
+            <div class="date" *ngFor="let treatment of treatments">
+              <div class="date" *ngIf="treatment.physiotherapist.id == currentUser">
+
+                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="live_tv"></mat-icon>
+
+                <li>
+                  <h3>{{treatment.title}}</h3>
+                </li>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+      <div class="my-patients">
+        <div class="my-patients_title">
+          <h1 [routerLink]="['/my-patients']">My Patients > </h1>
+        </div>
+        <div class="my-patients_body" >
+          <ul>
+            <div *ngFor="let appointment of appointments">
+              <div *ngIf="appointment.physiotherapist.id == currentUser">
+                <div class="date" *ngFor="let patient of patients">
+                  <img *ngIf="patient.id == appointment.patient.id"
+                       :src="{{patient.photoUrl}}">
+                  <li>
+                    <h3 *ngIf="patient.id == appointment.patient.id"  class="patient_name">
+                      {{patient.firstName + " " + patient.lastName}}</h3>
+                  </li>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div></div>
+  </div>
+</div>
+
+

@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.page {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.contents {
+  width: 100%;
+  height: 100%;
+  margin-left: 48px;
+  margin-right: 48px;
+}
+.sidenav {
+  height: 100%;
+}
+
+
+.mat-spacer {
+  flex: 1 1 auto;
+}
+h1 {
+  margin-bottom: px;
+  font-size: 30px;
+  font-weight: 500;
+}
+h1,h3, p {
+
+  font-family: 'IBM Plex Sans', "Helvetica Neue", sans-serif;
+}
+
+.list{
+  margin-top: 10px;
+  margin-left: 50px;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
+
+.move {
+  flex-direction: row;
+  display: flex;
+}
+
+.nav-back {
+  display: flex;
+}
+
+
+.move h2:hover {
+  cursor: pointer;
+}
+
+.list h1{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.nextButton{
+  margin-left:800px;
+}
+mat-icon {
+  cursor: pointer;
+
+}
+
+@media (max-width: 1400px) and (min-width:1000px) {
+
+  .list iframe {
+    width: 800px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 1000px) and (min-width:425px) {
+
+  .list h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+
+  }
+
+  .list iframe {
+    width: 520px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .list h1{
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  .list iframe {
+    width: 300px;
+  }
+}
+
+.titles {
+  flex-direction: row;
+}
