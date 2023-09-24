@@ -7,6 +7,8 @@ import {Physiotherapist} from "../../../security/model/physiotherapist";
 import {ActivatedRoute} from "@angular/router";
 import {PhysiotherapistsService} from "../../../security/services/physiotherapists.service";
 import {PatientsService} from "../../../security/services/patients.service";
+import { MatDialog } from '@angular/material/dialog';
+import { PopupComponent } from '../popup/popup.component';
 
 @Component({
   selector: 'app-schedule-appointments',
@@ -27,7 +29,7 @@ export class ScheduleAppointmentsComponent implements OnInit {
   appointmentForm!: NgForm;
 
 
-  constructor(private appointmentsService: AppointmentsService, private route:ActivatedRoute, private physiotherapistsService: PhysiotherapistsService, private patientsService: PatientsService) {
+  constructor(private appointmentsService: AppointmentsService, private route: ActivatedRoute, private physiotherapistsService: PhysiotherapistsService, private patientsService: PatientsService, private dialog: MatDialog) {
     this.appointmentData = {} as Appointments;
     this.date = "";
     this.currentUser = Number(sessionStorage.getItem("typeId"));
@@ -62,11 +64,25 @@ export class ScheduleAppointmentsComponent implements OnInit {
   }
 
 
-  onSubmit(){
-    if(this.appointmentForm.form.valid){
-      console.log(' about to add');
-      this.addAppointment();
+  onSubmit() {
+    if (this.appointmentForm.form.valid) {
+      // Muestra el cuadro de diálogo
+      this.openDialog();
+  
+      // Llama a this.addAppointment después de cerrar el cuadro de diálogo
+      // Esto simula una demora antes de agregar la cita
+      setTimeout(() => {
+        this.addAppointment();
+      }, 2000); // Cambia el valor a la cantidad de milisegundos de retraso deseada
     }
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(PopupComponent);
+  
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('Dialog closed:', result);
+    });
   }
 
 }

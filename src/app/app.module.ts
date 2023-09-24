@@ -36,6 +36,7 @@ import { ScheduleAppointmentsComponent } from './appointments/pages/schedule-app
 import { PaymentsComponent } from './appointments/pages/payments/payments.component';
 import { MedicalAppointmentsComponent } from './appointments/pages/medical-appointments/medical-appointments.component';
 import { TreatmentsInfoComponent } from './treatments/pages/treatments-info/treatments-info.component';
+import { MatDialogModule } from '@angular/material/dialog';
 import {
   ProfessionalProfileComponent
 } from "./appointments/pages/professional-profile/professional-profile.component";
@@ -56,6 +57,7 @@ import {EducationComponent} from './profiles/pages/education/education.component
 import {MatMenuModule} from "@angular/material/menu";
 import {MyPatientsComponent} from "./appointments/pages/my-patients/my-patients.component";
 import {DiagnosisComponent} from "./appointments/pages/diagnosis/diagnosis.component";
+import { PopupComponent } from './appointments/pages/popup/popup.component';
 
 
 
@@ -86,7 +88,8 @@ import {DiagnosisComponent} from "./appointments/pages/diagnosis/diagnosis.compo
     ProfileDoctorComponent,
     EducationComponent,
     MyPatientsComponent,
-    DiagnosisComponent
+    DiagnosisComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
@@ -115,7 +118,8 @@ import {DiagnosisComponent} from "./appointments/pages/diagnosis/diagnosis.compo
     MatNativeDateModule,
     MatSelectModule,
     MatProgressBarModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule,
   ],
   providers: [TreatmentsService,PhysiotherapistsService],
   bootstrap: [AppComponent]
